@@ -6,6 +6,14 @@
     Array::last = ->
       @[@length - 1]
 
+# String
+
+    String::first = ->
+      @[0]
+
+    String::last = ->
+      @[@length - 1]
+
 # Days
 
     class Days
