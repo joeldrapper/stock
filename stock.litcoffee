@@ -1,15 +1,28 @@
 ## Array
 
+### first
+Returns the first element of the array.
+
     Array::first = ->
       @[0]
+
+### last
+Returns the last element of the array.
 
     Array::last = ->
       @[@length - 1]
 
 ## String
 
+
+## first
+Returns the first character in the string.
+
     String::first = ->
       @[0]
+
+## last
+Returns the last character in the string.
 
     String::last = ->
       @[@length - 1]
