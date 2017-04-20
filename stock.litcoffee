@@ -1,4 +1,4 @@
-# Array
+## Array
 
     Array::first = ->
       @[0]
@@ -6,7 +6,7 @@
     Array::last = ->
       @[@length - 1]
 
-# String
+## String
 
     String::first = ->
       @[0]
@@ -14,7 +14,7 @@
     String::last = ->
       @[@length - 1]
 
-# Days
+## Days
 
     class Days
       constructor: (value) ->
@@ -35,7 +35,7 @@
         date.setDate date.getDate() + @valueOf
         return date
 
-# Number
+## Number
 
     Number::times = (fn) ->
       if @valueOf
