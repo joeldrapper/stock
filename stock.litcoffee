@@ -50,6 +50,9 @@ Returns the last character in the string.
 
 ## Number
 
+### times
+Executes the function a given number of times.
+
     Number::times = (fn) ->
       if @valueOf
         i = 0
