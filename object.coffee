@@ -1,2 +1,6 @@
 Object::new = ->
   new @ arguments...
+
+Object::aliasMethod = (alias, method) ->
+  @::[alias] = ->
+    @[method] arguments...
