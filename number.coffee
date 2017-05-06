@@ -5,6 +5,15 @@ Number::times = (fn) ->
       fn(i)
       i++
 
+Number::floor = ->
+  Math.floor @valueOf()
+
+Number::round = ->
+  Math.round @valueOf()
+
+Number::ceil = ->
+  Math.ceil @valueOf()
+
 Object.defineProperty Number::, "days",
   get: ->
     new Days(@valueOf())
