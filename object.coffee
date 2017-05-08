@@ -8,16 +8,14 @@ Object::aliasMethod = (alias, method) ->
 Object::property = (name, accessors) ->
   Object.defineProperty @::, name, accessors
 
-Object::extend = (obj) ->
-  for key, value of obj when key not in ['extended', 'included']
-    @[key] = value
-
-  obj.extended?.apply(@)
-  this
-
 Object::include = (obj) ->
-  for key, value of obj when key not in ['extended', 'included']
-    @::[key] = value
+  for method in Object.getOwnPropertyNames(obj)
+    if method not in Object.getOwnPropertyNames(@)
+      unless method is "included"
+        @[method] = obj[method]
 
-  obj.included?.apply(@)
-  this
+  for method in Object.getOwnPropertyNames(obj::)
+    if method not in Object.getOwnPropertyNames(@::)
+      @::[method] = obj::[method]
+
+  obj.included @ if obj.included?
