@@ -5,14 +5,14 @@ class Days
   inspect: ->
     "#{@valueOf} days"
 
-Object.defineProperty Days::, "ago",
-  get: ->
-    date = new Date()
-    date.setDate date.getDate() - @valueOf
-    return date
+  @property "ago",
+    get: ->
+      date = new Date()
+      date.setDate date.getDate() - @valueOf
+      return date
 
-Object.defineProperty Days::, "fromNow",
-  get: ->
-    date = new Date()
-    date.setDate date.getDate() + @valueOf
-    return date
+  @property "fromNow",
+    get: ->
+      date = new Date()
+      date.setDate date.getDate() + @valueOf
+      return date
