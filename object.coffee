@@ -10,9 +10,8 @@ Object::property = (name, accessors) ->
 
 Object::include = (obj) ->
   for method in Object.getOwnPropertyNames(obj)
-    unless method in Object.getOwnPropertyNames(@)
-      unless method is "included"
-        @[method] = obj[method]
+    unless method is "included" or method in Object.getOwnPropertyNames(@)
+      @[method] = obj[method]
 
   for method in Object.getOwnPropertyNames(obj::)
     unless method in Object.getOwnPropertyNames(@::)
